@@ -17,3 +17,15 @@ $(".modal-register").on("click", function () {
   $(".modal-body-login").removeClass("check");
   $(".modal-body-register").addClass("check");
 });
+
+// menu btn click hiden show mobile and tablet
+
+$(".navbar__mobile-category").on("click", function () {
+  $(".navbar__list").addClass("active");
+  console.log(1);
+});
+
+$(".icon-exit").on("click", function () {
+  $(".navbar__list").removeClass("active");
+  console.log(1);
+});

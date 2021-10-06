@@ -4,11 +4,11 @@
     width: 700px;
   }
 
-  .hiden-xl {
+  .hiden-xl,
+  .header__user.header__user-mobile {
     display: none !important;
   }
 
-  .header__user,
   .icon-exit {
     display: none;
   }
@@ -30,11 +30,11 @@
 
   .menu__big svg {
     color: var(--bs-white);
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
   }
 
-  .menu__big span {
+  .menu__big > span {
     line-height: var(--height-navbar);
     display: flex;
     align-items: center;
@@ -247,6 +247,10 @@
     display: none !important;
   }
 
+  .header__logo {
+    justify-content: center;
+  }
+
   .navbar__mobile {
     position: fixed;
     bottom: 0;
@@ -300,10 +304,19 @@
     bottom: 0;
     width: 320px;
     z-index: 20;
-    background-color: var(--bs-white);
     overflow-x: hidden;
     overflow-y: scroll;
+    background-color: var(--bs-white);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .navbar__list.active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.3s, transform 0.3s;
   }
 
   .container-xl {
@@ -325,6 +338,10 @@
     height: 36px;
   }
 
+  .list__product-item img {
+    margin-right: 10px;
+  }
+
   .menu__big {
     position: relative;
   }
@@ -333,16 +350,26 @@
     position: fixed;
     top: 0;
     left: 0;
+
     width: 320px;
     display: flex;
     font-size: 18px;
     font-weight: 700;
+    z-index: 10;
     align-items: center;
     color: var(--bs-white);
     height: var(--height-navbar);
     justify-content: space-between;
     background-color: var(--bs-color);
+  }
+
+  .menu__big-list-products {
+    margin: 40px 0 0;
     border-bottom: 1px solid var(--bs-color);
+  }
+
+  .menu__small-list {
+    margin: 10px 0 80px;
   }
 
   .menu__big-list-product > svg {
@@ -356,12 +383,16 @@
   }
 
   .menu__big-list-product .icon-exit {
-    margin: -4px 10px 0 0;
+    width: 20px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
   }
 
   .header__user {
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
     left: 0;
     height: 80px;
     width: 330px;
