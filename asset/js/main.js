@@ -22,10 +22,15 @@ $(".modal-register").on("click", function () {
 
 $(".navbar__mobile-category").on("click", function () {
   $(".navbar__list").addClass("active");
-  console.log(1);
+  $(".overlay").addClass("active");
 });
 
 $(".icon-exit").on("click", function () {
   $(".navbar__list").removeClass("active");
-  console.log(1);
+  $(".overlay").removeClass("active");
+});
+
+$(".overlay").on("click", function () {
+  $(".navbar__list").removeClass("active");
+  $(".overlay").removeClass("active");
 });

@@ -185,10 +185,11 @@ header {
   right: -20px;
   border-radius: 5px;
   padding: 20px 10px;
+  display: none;
+  width: 250px;
+  z-index: 10;
   background-color: var(--bs-white);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  width: 250px;
-  display: none;
   animation: hide-show ease forwards 0.3s;
 }
 
@@ -398,6 +399,22 @@ header {
 }
 
 .modal-body.check {
+  display: block;
+}
+
+/* overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.overlay.active {
   display: block;
 }
 
