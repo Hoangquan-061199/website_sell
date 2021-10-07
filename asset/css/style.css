@@ -387,6 +387,14 @@ header {
   width: 100%;
 }
 
+/* section category */
+.section__category {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 0;
+}
+
 /* modal */
 .modal-header h5 {
   padding: 0 10px;
