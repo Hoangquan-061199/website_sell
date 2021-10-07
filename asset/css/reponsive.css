@@ -203,7 +203,7 @@
     display: none;
     position: absolute;
     top: 0;
-    left: 105%;
+    left: 104%;
     width: 700px;
     height: 100%;
     list-style: none;
@@ -256,8 +256,9 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 5;
     height: 60px;
+    background-color: var(--bs-white);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   }
 
@@ -305,7 +306,7 @@
     width: 320px;
     overflow-x: hidden;
     overflow-y: scroll;
-    z-index: 20;
+    z-index: 30;
     background-color: var(--bs-white);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     opacity: 0;
@@ -381,7 +382,7 @@
     height: 44px;
     display: flex;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 20px;
   }
 
   .header__user {
@@ -402,6 +403,22 @@
   .header__user-login-content .btn-login-user,
   .header__user-phone a {
     opacity: 1;
+  }
+
+  /* overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+  }
+
+  .overlay.active {
+    display: block;
   }
 }
 

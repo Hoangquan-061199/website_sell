@@ -34,3 +34,5 @@ $(".overlay").on("click", function () {
   $(".navbar__list").removeClass("active");
   $(".overlay").removeClass("active");
 });
+
+// slider
