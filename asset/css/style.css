@@ -393,6 +393,95 @@ header {
   justify-content: flex-start;
   align-items: center;
   padding: 20px 0;
+  overflow-y: hidden;
+  overflow-x: auto;
+  margin: 0 10px;
+}
+
+.section__category-item {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  height: 130px;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+.section__category-item img {
+  margin: 0 auto;
+}
+
+.section__category-item span {
+  color: var(--bs-dark);
+  text-align: center;
+  font-size: 16px;
+  width: 120px;
+}
+
+/* Section product */
+.section__products {
+  width: 100%;
+  height: 370px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.section__products-title {
+  display: flex;
+  justify-content: space-around;
+  background-color: #eaedf1;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 60px;
+  color: #98a5b9;
+}
+
+.section__products-title-item {
+  text-align: center;
+  flex: 1;
+}
+
+.section__products-phone.active,
+.section__products-style.active,
+.section__products-appliances.active {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #ec4f2e;
+  color: var(--bs-white);
+}
+
+.section__products-style.active {
+  background-color: #fdd742;
+}
+
+.section__products-appliances.active {
+  background-color: #b4e4f2;
+}
+
+.section__products-title-item h3 {
+  margin: 10px 0 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.section__products-title-item p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.section__products-content {
+  display: flex;
+  width: 100%;
+  height: 310px;
+}
+
+.section__products-content-phone {
+  display: flex;
+  background-color: #ec4f2e;
+}
+
+.item__product {
 }
 
 /* modal */
