@@ -92,6 +92,7 @@
     list-style-type: none;
     padding: 5px 10px;
     position: absolute;
+    z-index: 10;
     top: var(--height-navbar);
     width: 250px;
     border-radius: 5px;
@@ -415,6 +416,10 @@
     z-index: 5;
     background-color: rgba(0, 0, 0, 0.3);
     display: none;
+  }
+
+  .carousel {
+    margin-left: 10px;
   }
 
   .overlay.active {

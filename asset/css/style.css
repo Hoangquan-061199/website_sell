@@ -376,7 +376,15 @@ header {
 }
 
 .carousel-inner {
-  border-radius: 5px;
+  border-radius: 10px;
+}
+
+.carousel-indicators [data-bs-target] {
+  height: 5px;
+}
+
+.carousel-item {
+  width: 100%;
 }
 
 /* modal */
