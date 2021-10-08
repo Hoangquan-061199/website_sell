@@ -37,7 +37,7 @@ $(".overlay").on("click", function () {
 
 // section products
 $(".section__products-phone").click(function () {
-  $(".section__products-phone").addClass("active");
+  $(this).addClass("active");
   $(".section__products-content-list-phone").addClass("active");
 
   $(".section__products-style").removeClass("active");
