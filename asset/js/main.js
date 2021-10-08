@@ -38,16 +38,28 @@ $(".overlay").on("click", function () {
 // section products
 $(".section__products-phone").click(function () {
   $(".section__products-phone").addClass("active");
-  $(".section__products-appliances").removeClass("active");
+  $(".section__products-content-list-phone").addClass("active");
+
   $(".section__products-style").removeClass("active");
+  $(".section__products-appliances").removeClass("active");
+  $(".section__products-content-list-style").removeClass("active");
+  $(".section__products-content-list-appliances").removeClass("active");
 });
 $(".section__products-style").click(function () {
   $(".section__products-style").addClass("active");
+  $(".section__products-content-list-style").addClass("active");
+
   $(".section__products-phone").removeClass("active");
   $(".section__products-appliances").removeClass("active");
+  $(".section__products-content-list-phone").removeClass("active");
+  $(".section__products-content-list-appliances").removeClass("active");
 });
 $(".section__products-appliances").click(function () {
   $(".section__products-appliances").addClass("active");
+  $(".section__products-content-list-appliances").addClass("active");
+
   $(".section__products-phone").removeClass("active");
   $(".section__products-style").removeClass("active");
+  $(".section__products-content-list-phone").removeClass("active");
+  $(".section__products-content-list-style").removeClass("active");
 });

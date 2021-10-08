@@ -17,9 +17,14 @@ body {
 :root {
   --bs-white: #fff;
   --bs-color: #eb3e32;
+  --bs-discount: #ffd004;
 
   --height-header: 80px;
   --height-navbar: 44px;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .btn-color {
@@ -409,6 +414,15 @@ header {
 
 .section__category-item img {
   margin: 0 auto;
+  transition: all 0.3s;
+}
+
+.section__category-item:hover img {
+  transform: rotate(45deg);
+}
+
+.section__category-item:hover span {
+  color: var(--bs-yellow);
 }
 
 .section__category-item span {
@@ -423,23 +437,24 @@ header {
   width: 100%;
   height: 370px;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin: 20px 0;
   overflow: hidden;
 }
 
 .section__products-title {
   display: flex;
   justify-content: space-around;
-  background-color: #eaedf1;
+  background-color: var(--bs-gray-200);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   height: 60px;
-  color: #98a5b9;
+  color: var(--bs-gray-600);
 }
 
 .section__products-title-item {
   text-align: center;
   flex: 1;
+  cursor: pointer;
 }
 
 .section__products-phone.active,
@@ -470,18 +485,188 @@ header {
   font-size: 14px;
 }
 
-.section__products-content {
-  display: flex;
-  width: 100%;
-  height: 310px;
+.section__products-content-abs {
+  cursor: pointer;
 }
 
-.section__products-content-phone {
-  display: flex;
+.section__products-content {
+  width: 100%;
+  height: 310px;
   background-color: #ec4f2e;
 }
 
+.section__products-content-phone,
+.section__products-content-style,
+.section__products-content-appliances {
+  display: flex;
+  background-color: #ec4f2e;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.section__products-content-style {
+  background-color: #fdd742;
+}
+
+.section__products-content-appliances {
+  background-color: #b2e2ef;
+}
+
 .item__product {
+  height: 285px;
+  margin: 15px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--bs-white);
+  padding: 10px;
+  position: relative;
+}
+
+.item__product img {
+  width: 168px;
+  height: 180px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transform: scale(0.9);
+  transition: all 0.5s;
+}
+
+.item__product:hover img {
+  transform: scale(1);
+}
+
+.item__product-name {
+  display: block;
+  font-size: 14px;
+  width: 188px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-price {
+  font-size: 14px;
+}
+
+.item__product-buys-new {
+  margin: 0;
+  color: var(--bs-color);
+  font-weight: bold;
+}
+
+.item__product-buys-last {
+  margin: 0;
+  color: var(--bs-gray-600);
+  text-decoration: line-through;
+}
+
+.item__product-buys-last.disable {
+  display: none;
+}
+
+.item__product-cart {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: 0;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  transition: all 0.7s;
+  color: var(--bs-gray-600);
+}
+
+.item__product-cart svg {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  margin: auto;
+}
+
+.item__product:hover .item__product-cart {
+  background-color: var(--bs-color);
+  color: var(--bs-white);
+  transform: rotate(360deg);
+}
+
+.product-icon {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  transform: scale(0);
+  transition: all 0.4s;
+}
+
+.product-icon .icon-heart,
+.product-icon .icon-compare {
+  margin-top: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bs-white);
+  background-color: var(--bs-color);
+}
+
+.item__product:hover .product-icon {
+  transform: scale(1);
+}
+
+.product-discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--bs-discount);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  width: 40px;
+}
+
+.product-discount::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: -19px;
+  right: 0;
+  background-color: var(--bs-discount);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.product-discount::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: -19px;
+  left: 0;
+  background-color: var(--bs-discount);
+  clip-path: polygon(100% 0, 0 0, 0 100%);
+}
+
+.product-discount p {
+  margin: 0;
+}
+
+.product-discount.disable {
+  display: none;
+}
+
+.section__products-content-list-phone,
+.section__products-content-list-style,
+.section__products-content-list-appliances {
+  display: none;
+}
+
+.section__products-content-list-phone.active,
+.section__products-content-list-style.active,
+.section__products-content-list-appliances.active {
+  display: flex;
 }
 
 /* modal */
