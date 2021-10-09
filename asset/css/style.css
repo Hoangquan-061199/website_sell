@@ -38,6 +38,21 @@ body {
   opacity: 1;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--bs-dark);
+}
+
+.no-padding-left {
+  padding-left: 0;
+}
+
 /* Header start */
 header {
   height: var(--height-header);
@@ -669,6 +684,68 @@ header {
 .section__products-content-list-style.active,
 .section__products-content-list-appliances.active {
   display: flex;
+}
+
+/* section tech products */
+.section__tech-heading,
+.section__fashion-heading {
+  margin: 40px 0 20px;
+  border-bottom: 2px solid var(--bs-color);
+}
+
+.section__tech-heading .heading__block,
+.section__fashion-heading .heading__block {
+  font-size: 20px;
+  font-weight: bold;
+  height: 40px;
+  background-color: var(--bs-color);
+  overflow: hidden;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: block;
+  line-height: 40px;
+  text-align: center;
+}
+
+.heading__block a {
+  color: var(--bs-white);
+}
+
+.section__tech-title,
+.section__fashion-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: end;
+}
+
+.section__tech-title-item,
+.section__fashion-title-item {
+  margin-left: 20px;
+}
+
+.heading__block:hover a,
+.section__tech-title-item:hover a,
+.section__fashion-title-item:hover a {
+  color: var(--bs-yellow);
+}
+
+.section__tech-products-abs img,
+.section__fashion-products-abs img {
+  width: calc(100% - 10px);
+  height: 270px;
+}
+
+.section__tech-products-abs img:last-child,
+.section__fashion-products-abs img:last-child {
+  margin-top: 10px;
+}
+
+.section__tech-products-item .item__product,
+.section__fashion-products-item .item__product {
+  margin: 0;
 }
 
 /* modal */
