@@ -822,6 +822,40 @@ header {
   display: -webkit-box;
 }
 
+/* ! footer */
+footer {
+  background-color: var(--bs-dark);
+  margin-top: 20px;
+}
+
+.first__footer {
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--bs-gray-600);
+}
+
+.footer-heading {
+  color: var(--bs-white);
+  padding: 44px 0 34px;
+}
+
+.footer-item,
+.footer-item a {
+  color: var(--bs-gray-600);
+}
+
+.footer-item a:hover {
+  color: var(--bs-yellow);
+}
+
+.second__footer {
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--bs-gray-600);
+}
+
+.copyright__footer {
+  padding: 10px 0;
+}
+
 /* ! modal */
 .modal-header h5 {
   padding: 0 10px;
