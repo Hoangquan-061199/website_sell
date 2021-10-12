@@ -461,6 +461,10 @@ header {
   position: relative;
 }
 
+.section__category-btn {
+  display: none;
+}
+
 .section__category-btn .next-btn,
 .section__category-btn .prev-btn {
   position: absolute;
@@ -485,7 +489,8 @@ header {
 
 .carousel-control-prev:hover svg,
 .carousel-control-next:hover svg,
-.section__category-btn:hover svg {
+.section__category-btn .prev-btn:hover svg,
+.section__category-btn .next-btn:hover svg {
   color: var(--bs-color);
 }
 
@@ -566,6 +571,7 @@ header {
 .section__products-content-style,
 .section__products-content-appliances {
   background-color: #ec4f2e;
+  width: 100%;
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
