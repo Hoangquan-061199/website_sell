@@ -1,3 +1,13 @@
+@media (min-width: 1400px) {
+  .section__category-content {
+    justify-content: center;
+  }
+
+  .section__category-btn {
+    display: none;
+  }
+}
+
 /* ! >= display small  */
 @media (min-width: 993px) {
   .list__product-style,
@@ -407,7 +417,7 @@
   }
 
   .header__user {
-    position: fixed;
+    position: sticky;
     bottom: 0px;
     left: 0;
     height: 80px;
