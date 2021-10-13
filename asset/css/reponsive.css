@@ -478,6 +478,10 @@
   .overlay.active {
     display: block;
   }
+
+  .scroll-top {
+    bottom: 80px;
+  }
 }
 
 /* !tablet */

@@ -1,62 +1,100 @@
 $(document).ready(() => {
+  // variable
+  const loginModal = $(".modal-login");
+  const registerModal = $(".modal-register");
+  const check = "check";
+  const loginBodyModal = $(".modal-body-login");
+  const registerBodyModal = $(".modal-body-register");
+
+  const navCategory = $(".navbar__mobile-category");
+  const navList = $(".navbar__list");
+  const active = "active";
+  const overlay = $(".overlay");
+  const iconExit = $(".icon-exit");
+
+  const sectionPhone = $(".section__products-phone");
+  const sectionStyle = $(".section__products-style");
+  const sectionAppliances = $(".section__products-appliances");
+  const productListPhones = $(".section__products-content-list-phone");
+  const productListStyles = $(".section__products-content-list-style");
+  const productListAppliances = $(".section__products-content-list-appliances");
+
+  const titleItem = $(".section__products-title .section__products-title-item");
+
+  const prevCategory = $(".section__category-btn .prev-btn");
+  const nextCategory = $(".section__category-btn .next-btn");
+  const sectionCategory = $(".section__category-content");
+
+  const prevPhone = $(".product__phone-btn .prev-btn");
+  const nextPhone = $(".product__phone-btn .next-btn");
+  const sectionContentPhone = $(".section__products-content-phone");
+
+  const prevStyle = $(".product__style-btn .prev-btn");
+  const nextStyle = $(".product__style-btn .next-btn");
+  const sectionContentStyle = $(".section__products-content-style");
+
+  const prevAppliances = $(".product__appliances-btn .prev-btn");
+  const nextAppliances = $(".product__appliances-btn .next-btn");
+  const sectionContentAppliances = $(".section__products-content-appliances");
+
+  const sectionSuggest = $(".section__suggest-products");
+  const prevSuggest = $(".prev-suggest-btn");
+  const nextSuggest = $(".next-suggest-btn");
+
   // modal
   $(".myModal").on("shown.bs.modal", () => {
     $(".myInput").focus();
   });
 
   // btn login register
-  $(".modal-login").click(() => {
-    $(".modal-register").removeClass("check");
-    $(".modal-login").addClass("check");
-    $(".modal-body-register").removeClass("check");
-    $(".modal-body-login").addClass("check");
+  loginModal.click(() => {
+    addClass(loginModal, check);
+    addClass(loginBodyModal, check);
+
+    removeClass(registerModal, check);
+    removeClass(registerBodyModal, check);
   });
 
-  $(".modal-register").on("click", () => {
-    $(".modal-login").removeClass("check");
-    $(".modal-register").addClass("check");
-    $(".modal-body-login").removeClass("check");
-    $(".modal-body-register").addClass("check");
+  registerModal.click(() => {
+    addClass(registerModal, check);
+    addClass(registerBodyModal, check);
+
+    removeClass(loginModal, check);
+    removeClass(loginBodyModal, check);
   });
 
   // menu btn click hiden show mobile and tablet
-  $(".navbar__mobile-category").on("click", () => {
-    $(".navbar__list").addClass("active");
-    $(".overlay").addClass("active");
+  navCategory.click(() => {
+    addClass(navList, active);
+    addClass(overlay, active);
   });
 
-  $(".icon-exit").on("click", () => {
-    $(".navbar__list").removeClass("active");
-    $(".overlay").removeClass("active");
+  iconExit.click(() => {
+    removeClass(navList, active);
+    removeClass(overlay, active);
   });
 
-  $(".overlay").on("click", () => {
-    $(".navbar__list").removeClass("active");
-    $(".overlay").removeClass("active");
+  overlay.click(() => {
+    removeClass(navList, active);
+    removeClass(overlay, active);
   });
 
   // section products
   // GC MODIF FROM https://codepen.io/onigetoc/pen/zPvLLG
-  $(".section__products-title .section__products-title-item").on(
-    "click",
-    function () {
-      $(".section__products-title .section__products-title-item ").removeClass(
-        "active"
-      );
-      $(this).addClass("active");
-      // CALL scrollCenter PLUSGIN
-      $(".section__products-title").scrollCenter(".active", 300);
-    }
-  );
+  titleItem.click(function () {
+    removeClass(titleItem, active);
+    addClass($(this), active);
+    $(".section__products-title").scrollCenter(".active", 300);
+  });
 
   jQuery.fn.scrollCenter = function (elem, speed) {
     var active = jQuery(this).find(elem);
     var activeWidth = active.width() / 2;
 
     var pos = active.position().left + activeWidth;
-    var elpos = jQuery(this).scrollLeft(); // get current scroll position
-    var elW = jQuery(this).width(); //get div width
-    pos = pos + elpos - elW / 2; // for center position if you want adjust then change this
+    var elpos = jQuery(this).scrollLeft();
+    var elW = jQuery(this).width();
+    pos = pos + elpos - elW / 2;
 
     jQuery(this).animate(
       {
@@ -81,110 +119,103 @@ $(document).ready(() => {
     return this;
   };
 
-  $(".section__products-phone").click(() => {
-    $(".section__products-phone").addClass("active");
-    $(".section__products-content-list-phone").addClass("active");
+  sectionPhone.click(() => {
+    addClass(sectionPhone, active);
+    addClass(productListPhones, active);
 
-    $(".section__products-style").removeClass("active");
-    $(".section__products-appliances").removeClass("active");
-    $(".section__products-content-list-style").removeClass("active");
-    $(".section__products-content-list-appliances").removeClass("active");
+    removeClass(sectionStyle, active);
+    removeClass(sectionAppliances, active);
+    removeClass(productListStyles, active);
+    removeClass(productListAppliances, active);
   });
 
-  $(".section__products-style").click(() => {
-    $(".section__products-style").addClass("active");
-    $(".section__products-content-list-style").addClass("active");
+  sectionStyle.click(() => {
+    addClass(sectionStyle, active);
+    addClass(productListStyles, active);
 
-    $(".section__products-phone").removeClass("active");
-    $(".section__products-appliances").removeClass("active");
-    $(".section__products-content-list-phone").removeClass("active");
-    $(".section__products-content-list-appliances").removeClass("active");
+    removeClass(sectionPhone, active);
+    removeClass(sectionAppliances, active);
+    removeClass(productListPhones, active);
+    removeClass(productListAppliances, active);
   });
 
-  $(".section__products-appliances").click(() => {
-    $(".section__products-appliances").addClass("active");
-    $(".section__products-content-list-appliances").addClass("active");
+  sectionAppliances.click(() => {
+    addClass(sectionAppliances, active);
+    addClass(productListAppliances, active);
 
-    $(".section__products-phone").removeClass("active");
-    $(".section__products-style").removeClass("active");
-    $(".section__products-content-list-phone").removeClass("active");
-    $(".section__products-content-list-style").removeClass("active");
+    removeClass(sectionPhone, active);
+    removeClass(sectionStyle, active);
+    removeClass(productListPhones, active);
+    removeClass(productListStyles, active);
   });
 
   // section category
 
-  $(".section__category-btn .prev-btn").click(() => {
-    let leftPos = $(".section__category-content").scrollLeft();
-    $(".section__category-content").animate({ scrollLeft: leftPos - 200 }, 300);
+  prevCategory.click(() => {
+    scrollLeft(sectionCategory);
   });
 
-  $(".section__category-btn .next-btn").click(() => {
-    let leftPos = $(".section__category-content").scrollLeft();
-    $(".section__category-content").animate({ scrollLeft: leftPos + 200 }, 300);
+  nextCategory.click(() => {
+    scrollRight(sectionCategory);
   });
 
   // section product
-  $(".product__phone-btn .prev-btn").click(() => {
-    let leftPos = $(".section__products-content-phone").scrollLeft();
-    $(".section__products-content-phone").animate(
-      { scrollLeft: leftPos - 200 },
-      300
-    );
+
+  // product phone
+  prevPhone.click(() => {
+    scrollLeft(sectionContentPhone);
+  });
+  nextPhone.click(() => {
+    scrollRight(sectionContentPhone);
   });
 
-  $(".product__phone-btn .next-btn").click(() => {
-    let leftPos = $(".section__products-content-phone").scrollLeft();
-    $(".section__products-content-phone").animate(
-      { scrollLeft: leftPos + 200 },
-      300
-    );
+  //product style
+  prevStyle.click(() => {
+    scrollLeft(sectionContentStyle);
+  });
+  nextStyle.click(() => {
+    scrollRight(sectionContentStyle);
   });
 
-  $(".product__style-btn .prev-btn").click(() => {
-    let leftPos = $(".section__products-content-style").scrollLeft();
-    $(".section__products-content-style").animate(
-      { scrollLeft: leftPos - 200 },
-      300
-    );
+  // product appliances
+  prevAppliances.click(() => {
+    scrollLeft(sectionContentAppliances);
   });
-
-  $(".product__style-btn .next-btn").click(() => {
-    let leftPos = $(".section__products-content-style").scrollLeft();
-    $(".section__products-content-style").animate(
-      { scrollLeft: leftPos + 200 },
-      300
-    );
-  });
-
-  $(".product__appliances-btn .prev-btn").click(() => {
-    let leftPos = $(".section__products-content-appliances").scrollLeft();
-    $(".section__products-content-appliances").animate(
-      { scrollLeft: leftPos - 200 },
-      300
-    );
-  });
-
-  $(".product__appliances-btn .next-btn").click(() => {
-    let leftPos = $(".section__products-content-appliances").scrollLeft();
-    $(".section__products-content-appliances").animate(
-      { scrollLeft: leftPos + 200 },
-      300
-    );
+  nextAppliances.click(() => {
+    scrollRight(sectionContentAppliances);
   });
 
   // suggest today
-  $(".prev-suggest-btn").click(() => {
-    let leftPos = $(".section__suggest-products").scrollLeft();
-    $(".section__suggest-products").animate({ scrollLeft: leftPos - 200 }, 300);
+  prevSuggest.click(() => {
+    scrollLeft(sectionSuggest);
   });
 
-  $(".next-suggest-btn").click(() => {
-    let leftPos = $(".section__suggest-products").scrollLeft();
-    $(".section__suggest-products").animate({ scrollLeft: leftPos + 200 }, 300);
+  nextSuggest.click(() => {
+    scrollRight(sectionSuggest);
   });
 
   // scroll top
   $(".scroll-top").click(() => {
     $(document).scrollTop(0);
   });
+
+  // function Scroll
+  function scrollLeft(e) {
+    let leftPos = e.scrollLeft();
+    e.animate({ scrollLeft: leftPos - 200 }, 300);
+  }
+
+  function scrollRight(e) {
+    let leftPos = e.scrollLeft();
+    e.animate({ scrollLeft: leftPos + 200 }, 300);
+  }
+
+  // function add remove class
+  function addClass(a, b) {
+    a.addClass(b);
+  }
+
+  function removeClass(a, b) {
+    a.removeClass(b);
+  }
 });
