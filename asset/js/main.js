@@ -320,7 +320,7 @@ $(document).ready(() => {
                 <span>đ</span>
             </p>
         </div>
-        <button class="item__product-cart" title="Thêm vào giỏ hàng">
+        <button class="item__product-cart" data-index="${i}" title="Thêm vào giỏ hàng">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-cart2" viewBox="0 0 16 16">
                 <path
@@ -370,7 +370,7 @@ $(document).ready(() => {
                 <span>đ</span>
             </p>
         </div>
-        <button class="item__product-cart" title="Thêm vào giỏ hàng">
+        <button class="item__product-cart" data-index="${i}" title="Thêm vào giỏ hàng">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-cart2" viewBox="0 0 16 16">
                 <path
@@ -420,7 +420,7 @@ $(document).ready(() => {
                   <span>đ</span>
               </p>
           </div>
-          <button class="item__product-cart" title="Thêm vào giỏ hàng">
+          <button class="item__product-cart" data-index="${i}" title="Thêm vào giỏ hàng">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-cart2" viewBox="0 0 16 16">
                   <path
@@ -470,7 +470,7 @@ $(document).ready(() => {
                 <span>đ</span>
             </p>
         </div>
-        <button class="item__product-cart" title="Thêm vào giỏ hàng">
+        <button class="item__product-cart" data-index="${i}" title="Thêm vào giỏ hàng">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-cart2" viewBox="0 0 16 16">
                 <path
@@ -520,7 +520,7 @@ $(document).ready(() => {
                 <span>đ</span>
             </p>
         </div>
-        <button class="item__product-cart" title="Thêm vào giỏ hàng">
+        <button class="item__product-cart" data-index="${i}" title="Thêm vào giỏ hàng">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-cart2" viewBox="0 0 16 16">
                 <path
@@ -570,7 +570,7 @@ $(document).ready(() => {
                 <span>đ</span>
             </p>
         </div>
-        <button class="item__product-cart" title="Thêm vào giỏ hàng">
+        <button class="item__product-cart" data-index="${i}" title="Thêm vào giỏ hàng">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-cart2" viewBox="0 0 16 16">
                 <path
@@ -618,7 +618,26 @@ $(document).ready(() => {
     $(".section__newspapper-products").append(html);
   }
 
-  // var cart = [];
+  var cart = [];
+
+  // click btn add cart
+  $(".item__product-cart").click(function () {
+    let i = $(this).data("index");
+    let check = false;
+
+    cart.filter((itemCart) => {
+      if (itemCart.name == listPhones[i].name) {
+        itemCart.quantity += 1;
+        check = true;
+      }
+    });
+
+    if (check == false) {
+      listPhones[i].quantity = 1;
+      cart.push(listPhones[i]);
+    }
+    handleRender();
+  });
 
   // modal
   $(".myModal").on("shown.bs.modal", () => {
@@ -796,5 +815,51 @@ $(document).ready(() => {
 
   function removeClass(a, b) {
     a.removeClass(b);
+  }
+
+  // function render
+  function handleRender() {
+    $(".product__cart").empty();
+
+    var totalPrice = 0;
+    for (let i = 0; i < cart.length; i++) {
+      totalPrice =
+        totalPrice + Number(cart[i].quatity) * Number(cart[i].priceNew);
+      var html = `
+        <li class="product__cart-item" data-index="${i}">
+          <img src="${cart[i].imgSrc}"
+              alt="">
+          <div class="product__cart-item-content">
+              <a href="">${cart[i].name}</a>
+              <div class="d-flex">
+                  <div class="product__cart-quantily">
+                      <span>Số lượng:</span>
+                      <div class="content__quantity-btn">
+                          <button class="content__quantity-minus">-</button>
+                          <input type="number" max="100" min="1" name="quantily" value="${
+                            cart[i].quantity
+                          }">
+                          <button class="content__quantity-plus">+</button>
+                      </div>
+                  </div>
+                  <p class="product__cart-item-buy">
+                      <span>
+                      ${Number(cart[i].quantity) * Number(cart[i].priceNew)}
+                          <span>đ</span>
+                      </span>
+
+                  </p>
+
+              </div>
+          </div>
+          <button class="product__cart-delete">Xóa</button>
+        </li>
+      `;
+      $(".product__cart").append(html);
+      // let totalPay = totalPrice);
+    }
+    // console.log(totalPrice);
+
+    // $(".total-pay").html(totalPrice);
   }
 });

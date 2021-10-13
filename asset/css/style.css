@@ -250,12 +250,12 @@ header {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   padding: 0 10px;
-  display: none;
+  /* display: none; */
   position: absolute;
   right: -20px;
   top: 36px;
   width: 330px;
-  z-index: 1;
+  z-index: 100;
 }
 
 .header__group-yes-cart::after {
@@ -378,6 +378,10 @@ header {
   color: var(--bs-color);
   font-size: 16px;
   font-weight: bold;
+}
+
+.product__footer-sum .total-pay {
+  margin-right: 10px;
 }
 
 .product__footer-btn-payment {
@@ -587,11 +591,8 @@ header {
 .product__phone-btn .prev-btn,
 .product__phone-btn .next-btn {
   position: absolute;
-  top: 0;
+  top: calc(50% - 30px);
   width: 40px;
-  height: 100%;
-  display: flex;
-  align-items: center;
 }
 
 .product__appliances-btn .prev-btn,
