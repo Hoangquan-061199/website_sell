@@ -462,7 +462,7 @@ header {
 }
 
 .section__category-btn {
-  display: none;
+  display: flex;
 }
 
 .section__category-btn .next-btn,
@@ -477,7 +477,8 @@ header {
 
 .carousel-control-prev-icon svg,
 .carousel-control-next-icon svg,
-.section__category-btn svg {
+.prev-btn svg,
+.next-btn svg {
   width: 30px;
   height: 30px;
   color: var(--bs-dark);
@@ -489,8 +490,8 @@ header {
 
 .carousel-control-prev:hover svg,
 .carousel-control-next:hover svg,
-.section__category-btn .prev-btn:hover svg,
-.section__category-btn .next-btn:hover svg {
+.prev-btn:hover svg,
+.next-btn:hover svg {
   color: var(--bs-color);
 }
 
@@ -565,6 +566,7 @@ header {
   width: 100%;
   height: 310px;
   background-color: #ec4f2e;
+  position: relative;
 }
 
 .section__products-content-phone,
@@ -575,6 +577,34 @@ header {
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
+}
+
+.product__appliances-btn .next-btn,
+.product__appliances-btn .prev-btn,
+.product__style-btn .next-btn,
+.product__style-btn .prev-btn,
+.product__phone-btn .prev-btn,
+.product__phone-btn .next-btn {
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.product__appliances-btn .prev-btn,
+.product__style-btn .prev-btn,
+.product__phone-btn .prev-btn {
+  left: 0;
+  padding-left: 10px;
+}
+
+.product__appliances-btn .next-btn,
+.product__style-btn .next-btn,
+.product__phone-btn .next-btn {
+  right: 0;
+  padding-right: 10px;
 }
 
 .section__products-content-style {
@@ -805,6 +835,25 @@ header {
   width: 100%;
   height: 370px;
   margin: 0 0 20px;
+  position: relative;
+}
+
+.section__suggest-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.prev-suggest-btn svg,
+.next-suggest-btn svg {
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+}
+
+.prev-suggest-btn:hover svg,
+.next-suggest-btn:hover svg {
+  color: var(--bs-color);
 }
 
 .section__suggest .heading-item {
@@ -828,6 +877,7 @@ header {
 .section__newspapper-products .item__product {
   margin-left: 0;
   margin-right: 0;
+  height: 100%;
 }
 
 .section__newspapper-products img {

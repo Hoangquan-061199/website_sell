@@ -2,11 +2,9 @@
   .section__category-content {
     justify-content: center;
   }
-}
 
-@media (min-width: 993px) and (max-width: 1399px) {
   .section__category-btn {
-    display: flex;
+    display: none;
   }
 }
 

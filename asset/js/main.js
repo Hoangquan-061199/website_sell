@@ -5,7 +5,7 @@ $(document).ready(() => {
   });
 
   // btn login register
-  $(".modal-login").on("click", () => {
+  $(".modal-login").click(() => {
     $(".modal-register").removeClass("check");
     $(".modal-login").addClass("check");
     $(".modal-body-register").removeClass("check");
@@ -50,22 +50,12 @@ $(document).ready(() => {
   );
 
   jQuery.fn.scrollCenter = function (elem, speed) {
-    // this = #timepicker
-    // elem = .active
+    var active = jQuery(this).find(elem);
+    var activeWidth = active.width() / 2;
 
-    var active = jQuery(this).find(elem); // find the active element
-    //var activeWidth = active.width(); // get active width
-    var activeWidth = active.width() / 2; // get active width center
-
-    //alert(activeWidth)
-
-    //var pos = jQuery('#timepicker .active').position().left; //get left position of active li
-    // var pos = jQuery(elem).position().left; //get left position of active li
-    //var pos = jQuery(this).find(elem).position().left; //get left position of active li
-    var pos = active.position().left + activeWidth; //get left position of active li + center position
+    var pos = active.position().left + activeWidth;
     var elpos = jQuery(this).scrollLeft(); // get current scroll position
     var elW = jQuery(this).width(); //get div width
-    //var divwidth = jQuery(elem).width(); //get div width
     pos = pos + elpos - elW / 2; // for center position if you want adjust then change this
 
     jQuery(this).animate(
@@ -123,13 +113,64 @@ $(document).ready(() => {
 
   // section category
 
-  $(".prev-btn").click(() => {
-    var leftPos = $(".section__category-content").scrollLeft();
+  $(".section__category-btn .prev-btn").click(() => {
+    let leftPos = $(".section__category-content").scrollLeft();
     $(".section__category-content").animate({ scrollLeft: leftPos - 200 }, 300);
   });
 
-  $(".next-btn").click(() => {
-    var leftPos = $(".section__category-content").scrollLeft();
+  $(".section__category-btn .next-btn").click(() => {
+    let leftPos = $(".section__category-content").scrollLeft();
     $(".section__category-content").animate({ scrollLeft: leftPos + 200 }, 300);
   });
+
+  // section product
+  $(".product__phone-btn .prev-btn").click(() => {
+    let leftPos = $(".section__products-content-phone").scrollLeft();
+    $(".section__products-content-phone").animate(
+      { scrollLeft: leftPos - 200 },
+      300
+    );
+  });
+
+  $(".product__phone-btn .next-btn").click(() => {
+    let leftPos = $(".section__products-content-phone").scrollLeft();
+    $(".section__products-content-phone").animate(
+      { scrollLeft: leftPos + 200 },
+      300
+    );
+  });
+
+  $(".product__style-btn .prev-btn").click(() => {
+    let leftPos = $(".section__products-content-style").scrollLeft();
+    $(".section__products-content-style").animate(
+      { scrollLeft: leftPos - 200 },
+      300
+    );
+  });
+
+  $(".product__style-btn .next-btn").click(() => {
+    let leftPos = $(".section__products-content-style").scrollLeft();
+    $(".section__products-content-style").animate(
+      { scrollLeft: leftPos + 200 },
+      300
+    );
+  });
+
+  $(".product__appliances-btn .prev-btn").click(() => {
+    let leftPos = $(".section__products-content-appliances").scrollLeft();
+    $(".section__products-content-appliances").animate(
+      { scrollLeft: leftPos - 200 },
+      300
+    );
+  });
+
+  $(".product__appliances-btn .next-btn").click(() => {
+    let leftPos = $(".section__products-content-appliances").scrollLeft();
+    $(".section__products-content-appliances").animate(
+      { scrollLeft: leftPos + 200 },
+      300
+    );
+  });
+
+  // suggest today
 });
