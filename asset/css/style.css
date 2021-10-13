@@ -791,6 +791,7 @@ header {
   display: block;
   line-height: 40px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .heading__block a {
