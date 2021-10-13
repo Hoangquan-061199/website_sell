@@ -596,7 +596,7 @@ header {
 .product__appliances-btn .prev-btn,
 .product__style-btn .prev-btn,
 .product__phone-btn .prev-btn {
-  left: 0;
+  left: 290px;
   padding-left: 10px;
 }
 

@@ -173,4 +173,13 @@ $(document).ready(() => {
   });
 
   // suggest today
+  $(".prev-suggest-btn").click(() => {
+    let leftPos = $(".section__suggest-products").scrollLeft();
+    $(".section__suggest-products").animate({ scrollLeft: leftPos - 200 }, 300);
+  });
+
+  $(".next-suggest-btn").click(() => {
+    let leftPos = $(".section__suggest-products").scrollLeft();
+    $(".section__suggest-products").animate({ scrollLeft: leftPos + 200 }, 300);
+  });
 });

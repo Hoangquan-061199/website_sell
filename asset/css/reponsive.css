@@ -503,4 +503,10 @@
   .carousel-item img {
     height: 200px;
   }
+
+  .product__appliances-btn .prev-btn,
+  .product__style-btn .prev-btn,
+  .product__phone-btn .prev-btn {
+    left: 0;
+  }
 }
