@@ -182,4 +182,9 @@ $(document).ready(() => {
     let leftPos = $(".section__suggest-products").scrollLeft();
     $(".section__suggest-products").animate({ scrollLeft: leftPos + 200 }, 300);
   });
+
+  // scroll top
+  $(".scroll-top").click(() => {
+    $(document).scrollTop(0);
+  });
 });

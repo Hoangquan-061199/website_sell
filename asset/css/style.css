@@ -1055,6 +1055,28 @@ footer {
   display: block;
 }
 
+/* scroll top */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-top svg {
+  width: 30px;
+  height: 30px;
+  color: var(--bs-dark);
+  background-color: var(--bs-white);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-top:hover svg {
+  color: var(--bs-color);
+}
+
 /* key frame animation */
 @keyframes hide-show {
   from {
