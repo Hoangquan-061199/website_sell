@@ -604,7 +604,7 @@ $(document).ready(() => {
   }
 
   // get value section newspapper
-  for (let i = 0; i < listSuggestToday.length; i++) {
+  for (let i = 0; i < listNewspaper.length; i++) {
     var html = `
       <div class="item__product col-md-3 col-6">
         <img src="${listNewspaper[i].imgSrc}"
@@ -617,6 +617,8 @@ $(document).ready(() => {
 
     $(".section__newspapper-products").append(html);
   }
+
+  // var cart = [];
 
   // modal
   $(".myModal").on("shown.bs.modal", () => {

@@ -230,11 +230,6 @@ header {
   width: 40px;
 }
 
-.header__group-cart:hover .header__group-no-cart,
-.header__group-cart:hover .header__group-yes-cart {
-  display: block;
-}
-
 .header__group-no-cart svg {
   color: var(--bs-color);
   display: flex;
@@ -254,12 +249,13 @@ header {
   background-color: var(--bs-white);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  display: none;
   padding: 0 10px;
+  display: none;
   position: absolute;
   right: -20px;
   top: 36px;
   width: 330px;
+  z-index: 1;
 }
 
 .header__group-yes-cart::after {
@@ -276,6 +272,11 @@ header {
   border-bottom: 1px solid var(--bs-color);
   font-size: 18px;
   padding: 10px 0;
+}
+
+.header__group-cart:hover .header__group-no-cart,
+.header__group-cart:hover .header__group-yes-cart {
+  display: block;
 }
 
 .product__cart {
