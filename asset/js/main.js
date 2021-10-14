@@ -293,6 +293,9 @@ $(document).ready(() => {
   ];
 
   listProducts.forEach((e) => {
+    let priceNew = e.priceNew;
+    let pricelast = e.priceLast;
+
     // !Phone products
     if (e.category === "phone") {
       // !Phone
@@ -302,15 +305,15 @@ $(document).ready(() => {
         <span class="item__product-name">${e.name}</span>
         <div class="product-price">
             <p class="item__product-buys-new">
-                ${e.priceNew}
-                <span>đ</span>
+                ${currencyFomat(priceNew)}
             </p>
             <p class="item__product-buys-last">
-                ${e.priceLast}
-                <span>đ</span>
+                ${currencyFomat(pricelast)}
             </p>
         </div>
-        <button class="item__product-cart" data-index="${e.id}" title="Thêm vào giỏ hàng">
+        <button class="item__product-cart" data-index="${
+          e.id
+        }" title="Thêm vào giỏ hàng">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-cart2" viewBox="0 0 16 16">
                 <path
@@ -347,15 +350,15 @@ $(document).ready(() => {
         <span class="item__product-name">${e.name}</span>
         <div class="product-price">
             <p class="item__product-buys-new">
-                ${e.priceNew}
-                <span>đ</span>
+                ${currencyFomat(priceNew)}
             </p>
             <p class="item__product-buys-last">
-                ${e.priceLast}
-                <span>đ</span>
+                ${currencyFomat(pricelast)}
             </p>
         </div>
-        <button class="item__product-cart" data-index="${e.id}" title="Thêm vào giỏ hàng">
+        <button class="item__product-cart" data-index="${
+          e.id
+        }" title="Thêm vào giỏ hàng">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-cart2" viewBox="0 0 16 16">
                 <path
@@ -398,15 +401,15 @@ $(document).ready(() => {
           <span class="item__product-name">${e.name}</span>
           <div class="product-price">
               <p class="item__product-buys-new">
-                  ${e.priceNew}
-                  <span>đ</span>
+                  ${currencyFomat(priceNew)}
               </p>
               <p class="item__product-buys-last">
-                  ${e.priceLast}
-                  <span>đ</span>
+                  ${currencyFomat(pricelast)}
               </p>
           </div>
-          <button class="item__product-cart" data-index="${e.id}" title="Thêm vào giỏ hàng">
+          <button class="item__product-cart" data-index="${
+            e.id
+          }" title="Thêm vào giỏ hàng">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-cart2" viewBox="0 0 16 16">
                   <path
@@ -443,15 +446,15 @@ $(document).ready(() => {
           <span class="item__product-name">${e.name}</span>
           <div class="product-price">
               <p class="item__product-buys-new">
-              ${e.priceNew}
-                  <span>đ</span>
+              ${currencyFomat(priceNew)}
               </p>
               <p class="item__product-buys-last">
-              ${e.priceLast}
-                  <span>đ</span>
+              ${currencyFomat(pricelast)}
               </p>
           </div>
-          <button class="item__product-cart" data-index="${e.id}" title="Thêm vào giỏ hàng">
+          <button class="item__product-cart" data-index="${
+            e.id
+          }" title="Thêm vào giỏ hàng">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-cart2" viewBox="0 0 16 16">
                   <path
@@ -494,15 +497,15 @@ $(document).ready(() => {
         <span class="item__product-name">${e.name}</span>
         <div class="product-price">
             <p class="item__product-buys-new">
-                ${e.priceNew}
-                <span>đ</span>
+                ${currencyFomat(priceNew)}
             </p>
             <p class="item__product-buys-last">
-                ${e.priceLast}
-                <span>đ</span>
+                ${currencyFomat(pricelast)}
             </p>
         </div>
-        <button class="item__product-cart" data-index="${e.id}" title="Thêm vào giỏ hàng">
+        <button class="item__product-cart" data-index="${
+          e.id
+        }" title="Thêm vào giỏ hàng">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-cart2" viewBox="0 0 16 16">
                 <path
@@ -544,15 +547,15 @@ $(document).ready(() => {
         <span class="item__product-name">${e.name}</span>
         <div class="product-price">
             <p class="item__product-buys-new">
-                ${e.priceNew}
-                <span>đ</span>
+                ${currencyFomat(priceNew)}
             </p>
             <p class="item__product-buys-last">
-                ${e.priceLast}
-                <span>đ</span>
+                ${currencyFomat(pricelast)}
             </p>
         </div>
-        <button class="item__product-cart" data-index="${e.id}" title="Thêm vào giỏ hàng">
+        <button class="item__product-cart" data-index="${
+          e.id
+        }" title="Thêm vào giỏ hàng">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-cart2" viewBox="0 0 16 16">
                 <path
@@ -628,7 +631,6 @@ $(document).ready(() => {
     if (result === true) {
       let i = $(this).closest(".product__cart-item").data("index");
       cart.splice(i, 1);
-      console.log(i);
     }
 
     handleRender();
@@ -636,17 +638,18 @@ $(document).ready(() => {
 
   // click minus btn remove item cart
   $(".product__cart").on("click", ".content__quantity-minus", () => {
-    let i = $(".product__cart-item").data("index");
+    let i = $(this).closest(".product__cart-item").data("index");
     console.log(i);
-    // if (cart[i].quantity > 1) {
-    //   cart[i].quantity--;
-    // }
+    if (cart[i].quantity > 1) {
+      cart[i].quantity--;
+    }
     handleRender();
   });
 
   $(".product__cart").on("click", ".content__quantity-plus", () => {
     // console.log(2);
-
+    let i = $(this).closest(".product__cart-item").data("index");
+    cart[i].quantity++;
     handleRender();
   });
 
@@ -837,7 +840,7 @@ $(document).ready(() => {
     for (let i = 0; i < cart.length; i++) {
       totalPrice =
         totalPrice + Number(cart[i].quantity) * Number(cart[i].priceNew);
-
+      var vnd = Number(cart[i].quantity) * Number(cart[i].priceNew);
       var html = `
         <li class="product__cart-item" data-index="${cart[i].id}">
           <img src="${cart[i].imgSrc}"
@@ -857,10 +860,8 @@ $(document).ready(() => {
                   </div>
                   <p class="product__cart-item-buy">
                       <span>
-                      ${Number(cart[i].quantity) * Number(cart[i].priceNew)}
-                          <span>đ</span>
+                      ${currencyFomat(vnd)}
                       </span>
-
                   </p>
 
               </div>
@@ -870,6 +871,15 @@ $(document).ready(() => {
       `;
       $(".product__cart").append(html);
     }
-    $(".total-pay").html(totalPrice);
+    $(".total-pay").html(currencyFomat(totalPrice));
+  }
+
+  // !Function fomat currency
+  function currencyFomat(e) {
+    var cur = new Intl.NumberFormat("vi-VN", {
+      style: "currency",
+      currency: "VND",
+    }).format(e);
+    return cur;
   }
 });
