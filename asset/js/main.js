@@ -627,29 +627,9 @@ $(document).ready(() => {
 
   // click btn remove item cart
   $(".product__cart").on("click", ".product__cart-delete", () => {
-    let result = confirm("Bạn có muốn xoá sản phẩm này không?");
-    if (result === true) {
-      let i = $(this).closest(".product__cart-item").data("index");
-      cart.splice(i, 1);
-    }
-
-    handleRender();
-  });
-
-  // click minus btn remove item cart
-  $(".product__cart").on("click", ".content__quantity-minus", () => {
-    let i = $(this).closest(".product__cart-item").data("index");
+    var i = $(this).closest(".product__cart-item").data("index");
     console.log(i);
-    if (cart[i].quantity > 1) {
-      cart[i].quantity--;
-    }
-    handleRender();
-  });
 
-  $(".product__cart").on("click", ".content__quantity-plus", () => {
-    // console.log(2);
-    let i = $(this).closest(".product__cart-item").data("index");
-    cart[i].quantity++;
     handleRender();
   });
 
