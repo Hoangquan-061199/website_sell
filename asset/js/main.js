@@ -676,7 +676,9 @@ $(document).ready(() => {
       val = 1;
     }
     cart.forEach((item) => {
-      item.quantity = val;
+      if (item.id == i) {
+        item.quantity = val;
+      }
     });
     handleRender();
   });
@@ -875,24 +877,21 @@ $(document).ready(() => {
               alt="">
           <div class="product__cart-item-content">
               <a href="">${cart[i].name}</a>
-              <div class="d-flex">
-                  <div class="product__cart-quantily">
-                      <span>Số lượng:</span>
-                      <div class="content__quantity-btn">
-                          <button class="content__quantity-minus">-</button>
-                          <input class="input-quantity-product" type="number" max="100" min="1" name="quantily" value="${
-                            cart[i].quantity
-                          }">
-                          <button class="content__quantity-plus">+</button>
-                      </div>
-                  </div>
-                  <p class="product__cart-item-buy">
-                      <span>
-                      ${currencyFomat(vnd)}
-                      </span>
-                  </p>
-
-              </div>
+              <p class="product__cart-item-buy">
+                <span>
+                  ${currencyFomat(vnd)}
+                </span>
+              </p>
+              <div class="product__cart-quantily d-flex">
+                <span>Số lượng:</span>
+                <div class="content__quantity-btn">
+                  <button class="content__quantity-minus">-</button>
+                  <input class="input-quantity-product" type="number" max="100" min="1" name="quantily" value="${
+                    cart[i].quantity
+                  }">
+                  <button class="content__quantity-plus">+</button>
+                </div>
+              </div>  
           </div>
           <button class="product__cart-delete">Xóa</button>
         </li>

@@ -302,6 +302,10 @@ header {
 
 .product__cart-item-content {
   flex: 1;
+  margin: 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .product__cart-item-content a {
@@ -315,7 +319,8 @@ header {
 }
 
 .product__cart-quantily {
-  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .content__quantity-btn {
@@ -325,6 +330,7 @@ header {
 
 .product__cart-quantily span {
   font-size: 14px;
+  margin-right: 10px;
 }
 
 .content__quantity-btn input {
@@ -353,6 +359,10 @@ header {
 .product__cart-delete:hover {
   background-color: var(--bs-color);
   color: var(--bs-white);
+}
+
+.product__cart-item-buy {
+  margin: 0;
 }
 
 .product__cart-item-buy span {
