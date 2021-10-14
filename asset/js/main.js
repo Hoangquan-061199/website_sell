@@ -609,6 +609,7 @@ $(document).ready(() => {
   // click btn add cart
   $(".item__product-cart").click(function () {
     let i = $(this).data("index");
+    // console.log(i);
     let check = false;
 
     cart.filter((itemCart) => {
@@ -626,10 +627,47 @@ $(document).ready(() => {
   });
 
   // click btn remove item cart
-  $(".product__cart").on("click", ".product__cart-delete", () => {
-    var i = $(this).closest(".product__cart-item").data("index");
+  $(".product__cart").on("click", ".product__cart-delete", function () {
+    let msg = confirm("Bạn có muốn xoá sản phẩm này không?");
+    let i = $(this).closest(".product__cart-item").data("index");
     console.log(i);
+    if (msg == true) {
+      cart.splice(i, 1);
+      console.log("da xoá");
+    }
 
+    handleRender();
+  });
+
+  // click minus change value input
+  $(".product__cart").on("click", ".content__quantity-minus", function () {
+    let i = $(this).closest(".product__cart-item").data("index");
+    if (cart[i].quantity > 1) {
+      cart[i].quantity -= 1;
+    }
+    handleRender();
+  });
+
+  // click plus change value input
+  $(".product__cart").on("click", ".content__quantity-plus", function () {
+    let i = $(this).closest(".product__cart-item").data("index");
+    if (cart[i].quantity <= 999) {
+      cart[i].quantity += 1;
+    }
+    handleRender();
+  });
+
+  // change value input
+  $(".product__cart").on("change", ".input-quantity-product", function () {
+    let i = $(this).closest(".product__cart-item").data("index");
+    let val = $(this).val();
+    if (val > 999) {
+      val = 999;
+    }
+    if (val < 1) {
+      val = 1;
+    }
+    cart[i].quantity = val;
     handleRender();
   });
 
@@ -832,7 +870,7 @@ $(document).ready(() => {
                       <span>Số lượng:</span>
                       <div class="content__quantity-btn">
                           <button class="content__quantity-minus">-</button>
-                          <input type="number" max="100" min="1" name="quantily" value="${
+                          <input class="input-quantity-product" type="number" max="100" min="1" name="quantily" value="${
                             cart[i].quantity
                           }">
                           <button class="content__quantity-plus">+</button>
