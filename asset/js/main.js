@@ -650,7 +650,6 @@ $(document).ready(() => {
       }
     });
 
-    // console.log(cart[i].quantity);
     handleRender();
   });
 
@@ -659,10 +658,8 @@ $(document).ready(() => {
     let i = $(this).closest(".product__cart-item").data("index");
 
     cart.forEach((item) => {
-      if (item.id == i) {
-        if (item.quantity < 999) {
-          item.quantity += 1;
-        }
+      if (item.id == i && item.quantity < 999) {
+        item.quantity += 1;
       }
     });
     handleRender();
@@ -678,7 +675,9 @@ $(document).ready(() => {
     if (val < 1) {
       val = 1;
     }
-    cart[i].quantity = val;
+    cart.forEach((item) => {
+      item.quantity = val;
+    });
     handleRender();
   });
 

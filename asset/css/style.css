@@ -263,9 +263,9 @@ header {
   content: "";
   height: 25px;
   position: absolute;
-  right: 20px;
+  right: 0;
   top: -15px;
-  width: 40px;
+  width: 300px;
 }
 
 .header__group-yes-cart h3 {
