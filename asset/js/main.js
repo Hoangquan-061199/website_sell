@@ -43,6 +43,15 @@ $(document).ready(() => {
 
   var listProducts = [
     {
+      id: 0,
+      category: "phone",
+      name: "Samsung Galaxy Note 21",
+      priceNew: "29000000",
+      priceLast: "30500000",
+      imgSrc:
+        "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/dien-thoai-samsung-galaxy-s21-ultra-5g-256g-g998b-bac-h0l175-b6ac0e17-afc8-42a9-bb4f-aecaf81ad7e2.jpg?v=1623565400000",
+    },
+    {
       id: 1,
       category: "phone",
       name: "Samsung Galaxy Note 21",
@@ -63,15 +72,6 @@ $(document).ready(() => {
     {
       id: 3,
       category: "phone",
-      name: "Samsung Galaxy Note 21",
-      priceNew: "29000000",
-      priceLast: "30500000",
-      imgSrc:
-        "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/dien-thoai-samsung-galaxy-s21-ultra-5g-256g-g998b-bac-h0l175-b6ac0e17-afc8-42a9-bb4f-aecaf81ad7e2.jpg?v=1623565400000",
-    },
-    {
-      id: 4,
-      category: "phone",
       name: "Iphone 12 Mini New",
       priceNew: "26000000",
       priceLast: "",
@@ -79,7 +79,7 @@ $(document).ready(() => {
         "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/apple-iphone-12-mini-2-0340d148-dd79-40b3-b8ad-95ed589c7b5a.png?v=1623564588000",
     },
     {
-      id: 5,
+      id: 4,
       category: "phone",
       name: "Iphone 12 Pro Max Like New",
       priceNew: "22000000",
@@ -88,7 +88,7 @@ $(document).ready(() => {
         "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/iphone-12-pro-max-xanh-561e05b7-eed5-40c8-9065-49b5a1cea423.jpg?v=1623565125000",
     },
     {
-      id: 6,
+      id: 5,
       category: "phone",
       name: "Iphone XR - Vàng Chính Hãng VN/A",
       priceNew: "8000000",
@@ -97,7 +97,7 @@ $(document).ready(() => {
         "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/iphone-xr-mau-vang-didongviet-1-1-2.jpg?v=1623561749000",
     },
     {
-      id: 7,
+      id: 6,
       category: "phone",
       name: "Xiaomi Mi 10T Pro 5G",
       priceNew: "10900000",
@@ -106,7 +106,7 @@ $(document).ready(() => {
         "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/xiaomi-mi-10t-pro.jpg?v=1623565104000",
     },
     {
-      id: 8,
+      id: 7,
       category: "phone",
       name: "Iphone 12 Hàng Quốc Tế",
       priceNew: "26000000",
@@ -115,13 +115,22 @@ $(document).ready(() => {
         "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/apple-iphone-12-mini-5.png?v=1623565259000",
     },
     {
-      id: 9,
+      id: 8,
       category: "fashion",
       name: "Kappa giày thể thao Nam/Nữ 001",
       priceNew: "690000",
       priceLast: "1790000",
       imgSrc:
         "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/304itd0-a0u-vuong-a0954654-0a43-4a9c-a026-5786147d0bf0.jpg?v=1623808988000",
+    },
+    {
+      id: 9,
+      category: "fashion",
+      name: "Kappa giày thể thao Nam/Nữ 31169FW 001",
+      priceNew: "690000",
+      priceLast: "1790000",
+      imgSrc:
+        "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/31169fw-001-1.jpg?v=1623808992000",
     },
     {
       id: 10,
@@ -144,20 +153,20 @@ $(document).ready(() => {
     {
       id: 12,
       category: "fashion",
-      name: "Kappa giày thể thao Nam/Nữ 31169FW 001",
-      priceNew: "690000",
-      priceLast: "1790000",
-      imgSrc:
-        "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/31169fw-001-1.jpg?v=1623808992000",
-    },
-    {
-      id: 13,
-      category: "fashion",
       name: "Kappa giày thể thao Nam/Nữ 3116Z2W A04",
       priceNew: "690000",
       priceLast: "1790000",
       imgSrc:
         "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/3116z2w-a04-vuong.jpg?v=1623809101000",
+    },
+    {
+      id: 13,
+      category: "fashion",
+      name: "Kappa giày thể thao Nam/Nữ 3116Z3W 001",
+      priceNew: "790000",
+      priceLast: "1790000",
+      imgSrc:
+        "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/3116z3w-001-vuong.jpg?v=1623809190000",
     },
     {
       id: 14,
@@ -179,15 +188,6 @@ $(document).ready(() => {
     },
     {
       id: 16,
-      category: "fashion",
-      name: "Kappa giày thể thao Nam/Nữ 3116Z3W 001",
-      priceNew: "790000",
-      priceLast: "1790000",
-      imgSrc:
-        "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/3116z3w-001-vuong.jpg?v=1623809190000",
-    },
-    {
-      id: 17,
       category: "appliances",
       name: "Nồi cơm điện thông minh Bear SUBE015 DFB-B20A1",
       priceNew: "1190000",
@@ -196,7 +196,7 @@ $(document).ready(() => {
         "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/noi-com-dien-thong-minh-bear-sube015-dfb-b20a1-1620449971.jpg?v=1623599778000",
     },
     {
-      id: 18,
+      id: 17,
       category: "appliances",
       name: "Máy xay ăn dặm 0.3L Bear QSJ-A01F2 (GR-B03V2)",
       priceNew: "890000",
@@ -205,7 +205,7 @@ $(document).ready(() => {
         "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/may-xay-an-dam-03l-bear-qsj-a01f2-gr-b03v2-12062021.png?v=1623599484000",
     },
     {
-      id: 19,
+      id: 18,
       category: "appliances",
       name: "Máy xay ăn dặm 3 cối Bear LLJ-C04J1 (GR-B03V1)",
       priceNew: "1190000",
@@ -214,13 +214,22 @@ $(document).ready(() => {
         "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/may-xay-an-dam-3-coi-bear-llj-c04j1-gr-b03v1-12062021.png?v=1623599225000",
     },
     {
-      id: 20,
+      id: 19,
       category: "appliances",
       name: "Nồi nấu chậm 0,8L Bear SUBE001 - Bản Quốc Tế",
       priceNew: "550000",
       priceLast: "",
       imgSrc:
         "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/noi-nau-cham-08l-bear-sube001-ban-quoc-te-11012021.jpg?v=1623598983000",
+    },
+    {
+      id: 20,
+      category: "appliances",
+      name: "Nồi cơm điện thông minh Bear SUBE015 DFB-B20A1",
+      priceNew: "1190000",
+      priceLast: "",
+      imgSrc:
+        "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/noi-com-dien-thong-minh-bear-sube015-dfb-b20a1-1620449971.jpg?v=1623599778000",
     },
     {
       id: 21,
@@ -251,15 +260,6 @@ $(document).ready(() => {
     },
     {
       id: 24,
-      category: "appliances",
-      name: "Nồi cơm điện thông minh Bear SUBE015 DFB-B20A1",
-      priceNew: "1190000",
-      priceLast: "",
-      imgSrc:
-        "https://bizweb.dktcdn.net/thumb/medium/100/429/689/products/noi-com-dien-thong-minh-bear-sube015-dfb-b20a1-1620449971.jpg?v=1623599778000",
-    },
-    {
-      id: 25,
       category: "newspapper",
       name: "Galaxy Z Fold 3 và Z Flip 3 sẽ có giá rẻ hơn",
       info: "Hai smartphone đắt nhất của Samsung sẽ có giá rẻ hơn 400 USD so với thế hệ trước. Theo báo cáo của SamSungMobile",
@@ -267,7 +267,7 @@ $(document).ready(() => {
         "https://bizweb.dktcdn.net/thumb/large/100/429/689/articles/galaxy-fold-black-home-screen-open.jpg?v=1623603593787",
     },
     {
-      id: 26,
+      id: 25,
       category: "newspapper",
       name: "Cách làm bún sườn nấu sấu thanh mát",
       info: "Bún sườn nấu sấu là món ăn này rất hợp với mùa hè bởi cách làm và nguyên liệu đơn giản nhưng lại hấp dẫn",
@@ -275,7 +275,7 @@ $(document).ready(() => {
         "https://bizweb.dktcdn.net/thumb/large/100/429/689/articles/bun-rieu-da-lat-1.jpg?v=1623602344633",
     },
     {
-      id: 27,
+      id: 26,
       category: "newspapper",
       name: "TV Samsung đang giảm giá mạnh, có mẫu giảm tới 15 triệu để kích cầu đầu năm",
       info: " Hãng Samsung Việt Nam vừa công bố chương trình giảm giá hấp dẫn cho hàng loạt mẫu TV của hãng ra mắt trong năm 2018",
@@ -283,7 +283,7 @@ $(document).ready(() => {
         "https://bizweb.dktcdn.net/thumb/large/100/429/689/articles/smart-tivi-samsung-55-inch-ua55tu8000kxxv-4k-uhd.jpg?v=1623567121103",
     },
     {
-      id: 28,
+      id: 27,
       category: "newspapper",
       name: "Viettel đang tặng người dùng 3GB truy cập Internet miễn phí, áp dụng cho tất cả các loại thuê bao",
       info: "Rạng sáng nay (15/10/2019), Viettel đã bất ngờ dành tặng 1 triệu gói data ST15K miễn phí cho người dùng, áp dụng với",
@@ -610,7 +610,7 @@ $(document).ready(() => {
 
     cart.filter((itemCart) => {
       if (itemCart.id == listProducts[i].id) {
-        itemCart.quantity += 1;
+        itemCart.quantity++;
         check = true;
       }
     });
@@ -625,11 +625,27 @@ $(document).ready(() => {
   // click btn remove item cart
   $(".product__cart").on("click", ".product__cart-delete", () => {
     let result = confirm("Bạn có muốn xoá sản phẩm này không?");
-
     if (result === true) {
-      let index = $(this).closest(".product__cart-item").data("index");
-      cart.splice(index, 1);
+      let i = $(this).closest(".product__cart-item").data("index");
+      cart.splice(i, 1);
+      console.log(i);
     }
+
+    handleRender();
+  });
+
+  // click minus btn remove item cart
+  $(".product__cart").on("click", ".content__quantity-minus", () => {
+    let i = $(".product__cart-item").data("index");
+    console.log(i);
+    // if (cart[i].quantity > 1) {
+    //   cart[i].quantity--;
+    // }
+    handleRender();
+  });
+
+  $(".product__cart").on("click", ".content__quantity-plus", () => {
+    // console.log(2);
 
     handleRender();
   });
