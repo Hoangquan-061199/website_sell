@@ -20,7 +20,7 @@
     display: none !important;
   }
 
-  .icon-exit {
+  .menu__big-list-product .icon-exit {
     display: none;
   }
 
@@ -28,6 +28,7 @@
   .navbar__list {
     background-color: var(--bs-color);
     height: var(--height-navbar);
+    margin-top: var(--height-header);
   }
 
   .menu__small-list {
@@ -461,22 +462,6 @@
 
   .footer__content {
     padding-bottom: 60px;
-  }
-
-  /* overlay */
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 5;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: none;
-  }
-
-  .overlay.active {
-    display: block;
   }
 
   .scroll-top {

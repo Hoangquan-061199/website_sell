@@ -67,6 +67,13 @@ a {
 header {
   background-color: var(--bs-white);
   height: var(--height-header);
+  background-color: var(--bs-white);
+  height: var(--height-header);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 /* Header logo */
 .header__logo {
@@ -247,15 +254,29 @@ header {
 /* Hearder cart buy */
 .header__group-yes-cart {
   background-color: var(--bs-white);
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   padding: 0 10px;
-  display: none;
-  position: absolute;
-  right: -20px;
-  top: 36px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: var(--height-header);
   width: 330px;
   z-index: 100;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: all 0.3s;
+}
+
+.header__group-yes-cart-title .icon-exit {
+  position: absolute;
+  top: 6px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.header__group-yes-cart.active {
+  transform: translateX(0);
 }
 
 .header__group-yes-cart::after {
@@ -274,17 +295,12 @@ header {
   padding: 10px 0;
 }
 
-.header__group-cart:hover .header__group-no-cart,
-.header__group-cart:hover .header__group-yes-cart {
-  display: block;
-}
-
 .product__cart {
   list-style: none;
   margin: 0px;
   padding: 0;
   width: 100%;
-  max-height: 230px;
+  flex: 1;
   overflow-y: scroll;
 }
 
@@ -379,12 +395,14 @@ header {
 }
 
 .product__footer {
-  margin: 10px 0;
+  padding: 10px 10px 20px;
+  border-top: 1px solid var(--bs-color);
 }
 
 .product__footer-sum {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .product__footer-sum span:nth-child(2) {
@@ -1067,6 +1085,22 @@ footer {
 }
 
 .modal-body.check {
+  display: block;
+}
+
+/* overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.overlay.active {
   display: block;
 }
 
